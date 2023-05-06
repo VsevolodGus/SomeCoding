@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Store.DAL.BaseDB;
+﻿namespace Store.DAL.BaseDB;
 
 public class Class1
 {
