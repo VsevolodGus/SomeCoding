@@ -1,16 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Store.DAL.PGSQL;
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection UsePgSqlDatabase(this IServiceCollection services)
+    public static IServiceCollection UsePgSqlDatabase(this IServiceCollection services, IConfiguration configuration )
     {
-
+        var connectionStringPG = configuration.GetConnectionString("ConnectionStringPG");
+        services.AddScoped<IDbContextConfiguration>(c => new DbContextConfiguration(connectionStringPG));
 
 
         return services;

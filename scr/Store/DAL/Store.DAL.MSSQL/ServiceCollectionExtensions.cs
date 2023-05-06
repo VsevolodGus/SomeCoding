@@ -1,16 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Store.DAL.MSSQL;
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection UseMsSqlDatabase(this IServiceCollection services)
+    public static IServiceCollection UseMsSqlDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-
+        var connectionStringMS = configuration.GetConnectionString("ConnectionStringMS");
+        services.AddScoped<IDbContextConfiguration>(c => new DbContextConfiguration(connectionStringMS));
 
 
         return services;

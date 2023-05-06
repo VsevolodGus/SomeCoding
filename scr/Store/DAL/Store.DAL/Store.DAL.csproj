@@ -15,8 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Store.DAL.Interfaces\Store.DAL.Interfaces.csproj" />
-    <ProjectReference Include="..\Store.DAL.MSSQL\Store.DAL.MSSQL.csproj" />
-    <ProjectReference Include="..\Store.DAL.PGSQL\Store.DAL.PGSQL.csproj" />
   </ItemGroup>
 
 </Project>
