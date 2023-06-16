@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 namespace Store.DAL;
+
 internal class CrossPlatformDbContext : DbContext
 {
     private readonly IDbContextModelBuilder _modelBuilder;
     private readonly IDbContextConfiguration _configuration;
-
     public CrossPlatformDbContext( IDbContextModelBuilder modelBuilder
         , IDbContextConfiguration configuration)
     {
