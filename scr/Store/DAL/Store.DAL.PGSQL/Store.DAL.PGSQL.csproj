@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Store.DAL\Store.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
 </Project>
